@@ -1,15 +1,9 @@
 {
-  "builds": [
-    {
-      "src": "vietnam-travel/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
-    }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/vietnam-travel/$1" }
-  ],
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd vietnam-travel && npm run build",
+  "outputDirectory": "vietnam-travel/dist",
+  "installCommand": "cd vietnam-travel && npm install",
   "rewrites": [
-    { "source": "/vietnam-travel/:path*", "destination": "/vietnam-travel/index.html" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
