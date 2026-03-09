@@ -62,7 +62,7 @@ export function SiteHeader({ currentUser, onLogout }) {
 
 export function SiteFooter() {
   return (
-    <footer className="relative mt-12 overflow-hidden border-t border-primary/10 bg-gradient-to-b from-white to-primary/5 px-6 py-12">
+    <footer className="relative overflow-hidden border-t border-primary/10 bg-gradient-to-b from-background-light to-primary/5 px-6 py-12">
       <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-primary/5 blur-3xl" aria-hidden />
       <div className="absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-orange-500/5 blur-3xl" aria-hidden />
       <div className="relative mx-auto max-w-6xl">
