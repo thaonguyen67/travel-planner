@@ -62,37 +62,20 @@ export function SiteHeader({ currentUser, onLogout }) {
 
 export function SiteFooter() {
   return (
-    <footer className="mt-12 border-t border-primary/10 bg-white px-6 py-8">
-      <div className="mx-auto grid w-full max-w-6xl gap-8 md:grid-cols-4">
-        <div className="space-y-2">
-          <h3 className="font-bold text-primary">VietnamTravel</h3>
+    <footer className="relative mt-12 overflow-hidden border-t border-primary/10 bg-gradient-to-b from-white to-primary/5 px-6 py-12">
+      <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-primary/5 blur-3xl" aria-hidden />
+      <div className="absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-orange-500/5 blur-3xl" aria-hidden />
+      <div className="relative mx-auto max-w-6xl">
+        <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
           <p className="text-xs text-slate-500">
-            Your premium companion for discovering the timeless charm and hidden gems of Vietnam.
+            © 2026 Vietnam Travel Guidebook and AI Itinerary Planner. All rights reserved.
           </p>
-        </div>
-        <div className="space-y-2 text-sm text-slate-500">
-          <h4 className="font-semibold text-slate-900">Explore</h4>
-          <p>Northern Vietnam</p>
-          <p>Central Coast</p>
-          <p>Southern Mekong</p>
-        </div>
-        <div className="space-y-2 text-sm text-slate-500">
-          <h4 className="font-semibold text-slate-900">Tools</h4>
-          <p>AI Itinerary Planner</p>
-          <p>Budget Calculator</p>
-          <p>Visa Guide</p>
-        </div>
-        <div className="space-y-2 text-sm text-slate-500">
-          <h4 className="font-semibold text-slate-900">Newsletter</h4>
-          <div className="flex items-center gap-2 rounded-full bg-slate-100 px-3 py-2">
-            <span className="text-xs">Email address</span>
-            <span className="material-symbols-outlined ml-auto text-primary">arrow_forward</span>
+          <div className="flex items-center gap-2 text-slate-400">
+            <span className="material-symbols-outlined text-base">location_on</span>
+            <span className="text-xs">Vietnam</span>
           </div>
         </div>
       </div>
-      <p className="mx-auto mt-8 max-w-6xl border-t border-slate-100 pt-6 text-center text-xs text-slate-400">
-        © 2024 Vietnam Travel Guidebook + AI Planner. All rights reserved.
-      </p>
     </footer>
   )
 }

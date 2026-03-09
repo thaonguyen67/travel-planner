@@ -42,7 +42,7 @@ export function HomePage({ destinations }) {
   }
 
   return (
-    <main className="bg-[#f1f1f1]">
+    <main className="bg-background-light">
       <section className="mx-auto max-w-6xl px-4 pb-10 pt-6 md:px-6">
         <div className="relative overflow-hidden rounded-[28px] shadow-xl">
           <img

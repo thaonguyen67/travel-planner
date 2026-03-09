@@ -28,9 +28,7 @@ function FilterButtonGroup({ label, options, value, onChange }) {
   )
 }
 
-const ROWS_PER_PAGE = 3
-const COLS_PER_ROW = 3
-const DESTINATIONS_PER_PAGE = ROWS_PER_PAGE * COLS_PER_ROW
+const DESTINATIONS_PER_PAGE = 9
 
 function DestinationsGrid({ filtered, selected }) {
   const [visibleCount, setVisibleCount] = useState(DESTINATIONS_PER_PAGE)
@@ -45,7 +43,7 @@ function DestinationsGrid({ filtered, selected }) {
           key={item.id}
           type="button"
           onClick={() => navigate(`/destinations/${item.id}`)}
-          className={`group overflow-hidden rounded-xl border bg-white text-left shadow-sm transition-all hover:shadow-xl ${
+          className={`overflow-hidden rounded-xl border bg-white text-left shadow-sm transition-all hover:shadow-xl ${
             selected.id === item.id ? 'border-2 border-primary' : 'border-slate-100'
           }`}
         >
@@ -195,7 +193,7 @@ export function DestinationPage({ destinations, currentUser, favorites, onAddToF
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-4 font-bold text-white hover:opacity-90"
             >
               <span className="material-symbols-outlined">auto_fix_high</span>
-              Add to AI Trip Plan
+              Add to AI Itinerary Planner
             </Link>
           </div>
         </aside>

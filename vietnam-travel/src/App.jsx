@@ -119,6 +119,32 @@ function App() {
     return { ok: true, message: 'Added to favorites.' }
   }
 
+  const updateProfile = ({ name }) => {
+    if (!currentUser) return
+    const nextUsers = users.map((u) =>
+      u.email === currentUser.email ? { ...u, name } : u,
+    )
+    setUsers(nextUsers)
+    writeStorage(USERS_KEY, nextUsers)
+    const safeUser = { ...currentUser, name }
+    setCurrentUser(safeUser)
+    writeStorage(CURRENT_USER_KEY, safeUser)
+  }
+
+  const updateItinerary = (itineraryId, updates) => {
+    const next = itineraries.map((item) =>
+      item.id === itineraryId ? { ...item, ...updates } : item,
+    )
+    setItineraries(next)
+    writeStorage(ITINERARIES_KEY, next)
+  }
+
+  const deleteItinerary = (itineraryId) => {
+    const next = itineraries.filter((item) => item.id !== itineraryId)
+    setItineraries(next)
+    writeStorage(ITINERARIES_KEY, next)
+  }
+
   const removeFromFavorites = (destinationId) => {
     const next = favorites.filter(
       (f) => !(f.userEmail === currentUser?.email && f.destinationId === destinationId),
@@ -165,6 +191,9 @@ function App() {
               favorites={myFavorites}
               destinations={destinations}
               onRemoveFromFavorites={removeFromFavorites}
+              onUpdateProfile={updateProfile}
+              onDeleteItinerary={deleteItinerary}
+              onUpdateItinerary={updateItinerary}
             />
           }
         />
